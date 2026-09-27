@@ -1,0 +1,37 @@
+DETECTIVE DE VIVIENDA SALUDABLE · MAQUETA 3D
+
+INICIO
+1. Descomprime toda la carpeta.
+2. Abre index.html con Chrome, Edge o Firefox en un computador o celular.
+3. En «Bienvenidos, estrellas felices», escribe sara y pulsa «Entrar a la maqueta». Se exige la palabra cada vez que se abre la página.
+4. No necesitas instalar nada ni tener internet para la maqueta local; los enlaces a fuentes externas sí requieren conexión.
+
+VERSIÓN EN LÍNEA
+https://estrellas-felices-vivienda.alejohurca.chatgpt.site
+La publicación está disponible para el propietario con acceso a su cuenta de ChatGPT Work. La palabra sara es un control de entrada de la interfaz, no una contraseña segura que cifre u oculte el código de este ZIP.
+
+CONTROLES
+- Arrastra sobre la casa para girarla. Usa la rueda del ratón o los botones + y − para acercar o alejar.
+- Haz clic en los círculos numerados o en la lista de la derecha para abrir un hallazgo.
+- Marca cada hallazgo identificado. El contador indica el avance.
+- «Iniciar recorrido» comienza por el primer riesgo; «Siguiente pista» avanza de uno en uno.
+- «Ver propuesta» muestra cambios sugeridos: separación del taller, armario de herramientas, limpieza del piso, tapas en los tanques, contenedor cerrado y punto de agua propuesto.
+- «Inspeccionar» regresa a la situación inicial. «Reiniciar» borra el avance.
+- En el móvil, arrastra con un dedo y usa dos dedos para acercar o alejar.
+
+IDEA PARA EXPONER
+1. Presenta a los seis habitantes y explica que el garaje y la sala se comunican.
+2. Recorre las pistas 1 a 8: observación, consecuencia y acción concreta.
+3. Activa «Ver propuesta» y compara cómo cambiaría la vivienda.
+4. Cierra con prioridades: separar el taller y proteger a los niños; recoger aceites y herramientas; asegurar el agua y controlar los roedores; resolver la conexión de agua.
+
+La maqueta representa el escenario descrito para una exposición. No es un plano con medidas reales ni un diagnóstico de la vivienda. La propuesta de conexión a agua depende de la gestión con el prestador correspondiente. Las fuentes citadas dentro de cada hallazgo sustentan las medidas generales; las prioridades son una organización didáctica del caso.
+
+CRÉDITO TÉCNICO
+Three.js r147 y OrbitControls, distribuidos según licencia MIT. Consulta vendor/THREE-LICENSE.txt.
+
+COMPARACIÓN CON LAS CARTILLAS
+El botón «Balance del caso y cartillas» distingue lo visible de lo que debe verificarse. La maqueta se centra en esta vivienda; no reproduce cada tema de las dos cartillas. La cartilla de Vivienda Saludable incluye siete ejes: espacio vital, agua, excretas y aguas sucias, residuos sólidos, plagas, higiene y dinámica familiar. La cartilla de primera infancia incluye hogar, educación, espacio público y salud. El escenario no informa sobre todos esos aspectos.
+
+GUION DE EXPOSICIÓN
+El archivo Guion-detective-vivienda-saludable-6-personas.pdf contiene intervenciones para seis expositores, tiempos, referencias a las pistas y respuestas a preguntas probables.

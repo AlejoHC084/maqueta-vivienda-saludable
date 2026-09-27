@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b28">
+  <title>Detective de vivienda saludable · Maqueta 3D</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23132936'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='38' fill='%23e5a267'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="login" class="login-page" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <div class="login-stars" aria-hidden="true">✦ <span>✧</span> ✦</div>
+      <span class="eyebrow">UNA MISIÓN PARA EXPLORAR EN FAMILIA</span>
+      <h1 id="loginTitle">Bienvenidos,<br><em>estrellas felices</em></h1>
+      <p>Ingresa la palabra de acceso para entrar a la maqueta de vivienda saludable.</p>
+      <form id="loginForm" novalidate>
+        <label for="accessWord">Palabra de acceso</label>
+        <input id="accessWord" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="loginError" placeholder="Escribe la palabra aquí">
+        <p id="loginError" class="login-error" role="alert" hidden>La palabra no es correcta. Inténtalo de nuevo.</p>
+        <button class="primary" type="submit">Entrar a la maqueta →</button>
+      </form>
+    </div>
+  </section>
+  <div id="appShell" hidden>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">⌕</span><span><strong>DETECTIVE</strong><small>VIVIENDA SALUDABLE</small></span></div>
+    <div class="top-center">EXPEDIENTE 001 <span class="dot">·</span> VIVIENDA + TALLER DE MOTOS</div>
+    <button id="helpBtn" class="quiet-btn" aria-label="Mostrar instrucciones">¿Cómo explorar?</button>
+  </header>
+  <main class="layout">
+    <section class="stage" aria-label="Maqueta tridimensional interactiva">
+      <div id="scene"></div>
+      <div class="stage-top"><span class="live-dot"></span> MAQUETA INTERACTIVA <span class="stage-rule"></span> 1 PISO · 6 HABITANTES</div>
+      <div id="hotspots" class="hotspots"></div>
+      <div class="compass">N <span>↑</span></div>
+      <div class="scene-tools">
+        <button id="resetView" title="Restablecer cámara" aria-label="Restablecer cámara">↺</button>
+        <button id="zoomIn" title="Acercar" aria-label="Acercar">+</button>
+        <button id="zoomOut" title="Alejar" aria-label="Alejar">-</button>
+      </div>
+      <div class="scene-hint">ARRASTRA PARA GIRAR <span>·</span> RUEDA PARA ACERCAR <span>·</span> SELECCIONA UN NÚMERO</div>
+      <div id="loadError" class="load-error" hidden>No se pudo iniciar el modelo 3D. Prueba a abrir este archivo en Chrome, Edge o Firefox con la aceleración gráfica activada.</div>
+    </section>
+    <aside class="sidebar">
+      <div class="side-heading"><span class="eyebrow">EL CASO</span><span class="case-number">N.º 001 / 001</span></div>
+      <h1>Una casa.<br><em>Muchas pistas.</em></h1>
+      <p class="intro">Seis personas comparten una vivienda pequeña. El garaje funciona como taller de motos y se comunica con las zonas de vida.</p>
+      <div class="family"><span class="family-symbol" aria-hidden="true">●●●<br>●●●</span><div><strong>Padres · abuelos · 2 niños</strong><small>Los más pequeños y los mayores requieren especial cuidado.</small></div></div>
+      <div class="mode-tabs" role="group" aria-label="Modo de visualización"><button id="riskMode" class="active">⚠ Inspeccionar</button><button id="solutionMode">✦ Ver propuesta</button></div>
+      <div class="progress-row"><span>HALLAZGOS IDENTIFICADOS</span><strong id="progressText">0 / 8</strong></div>
+      <div class="progress-track"><div id="progressFill"></div></div>
+      <div id="list" class="risk-list" aria-label="Lista de hallazgos"></div>
+      <div class="bottom-tools"><button id="tourBtn" class="primary">▶ Iniciar recorrido</button><button id="resetProgress" class="outline" title="Borrar marcas de hallazgos">Reiniciar</button></div>
+      <button id="analysisBtn" class="analysis-trigger">▤ Balance del caso y cartillas <span>↗</span></button>
+    </aside>
+  </main>
+  <div id="detail" class="detail" role="dialog" aria-modal="false" aria-labelledby="detailTitle" hidden>
+    <button id="detailClose" class="detail-close" aria-label="Cerrar hallazgo">×</button>
+    <div class="detail-label" id="detailLabel"></div>
+    <h2 id="detailTitle"></h2><p id="detailWhere" class="detail-where"></p>
+    <div class="detail-block"><span>¿QUÉ OBSERVAMOS?</span><p id="detailRisk"></p></div>
+    <div class="detail-block solution-block"><span>ACCIÓN CONCRETA · ¿POR QUÉ?</span><p id="detailFix"></p></div>
+    <div class="detail-actions"><button id="markBtn" class="primary"></button><button id="nextBtn" class="outline">Siguiente pista →</button></div>
+    <a id="sourceLink" class="source" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a>
+  </div>
+  <div id="analysis" class="analysis-overlay" role="dialog" aria-modal="true" aria-labelledby="analysisTitle" hidden>
+    <div class="analysis-card">
+      <button id="analysisClose" class="detail-close" aria-label="Cerrar análisis">×</button>
+      <span class="eyebrow">GUÍA PARA LA EXPOSICIÓN</span>
+      <h2 id="analysisTitle">Lo observado y lo que falta verificar</h2>
+      <p>Las ocho pistas representan riesgos descritos en el escenario. Las cartillas abarcan además otros aspectos de la vivienda y del desarrollo infantil. No debemos afirmar que una condición existe si el caso no la describe.</p>
+      <div class="analysis-grid">
+        <section><h3>✓ Presente en la maqueta</h3><p>Separación de espacios y taller, accidentes, agua almacenada, higiene, residuos relacionados con roedores, plagas y circulación de seis personas.</p></section>
+        <section><h3>◌ Puntos por verificar</h3><p>Calidad del agua para beber, baño y manejo de excretas y aguas residuales, disposición de basuras, ventilación real, iluminación y seguridad eléctrica.</p></section>
+        <section><h3>＋ Aspectos potencialmente favorables</h3><p>Hay un espacio de vivienda y un lugar de trabajo para el sustento. Separar el taller debe proteger la vida familiar sin desconocer esa actividad. No hay datos para calificar los vínculos entre familiares.</p></section>
+        <section><h3>◇ Bienestar infantil</h3><p>Además de retirar peligros físicos, hay que asegurar supervisión, un lugar de juego, buen trato, lavado de manos y acceso al cuidado de salud. La cartilla de infancia también aborda educación y espacio público, fuera de esta escena doméstica.</p></section>
+      </div>
+      <p class="analysis-foot">Basado en <i>Hacia una vivienda saludable. Cartilla educativa para la familia</i> (temas 1 a 7) y <i>Entornos seguros y saludables para niños y niñas de la primera infancia</i> (entornos hogar, educativo, salud y espacio público).</p>
+    </div>
+  </div>
+  <div id="welcome" class="welcome" role="dialog" aria-labelledby="welcomeTitle" aria-modal="true" hidden>
+    <div class="welcome-card"><div class="welcome-mark">⌕</div><span class="eyebrow">MISIÓN INTERACTIVA</span><h2 id="welcomeTitle">Detective de<br><em>vivienda saludable</em></h2><p>Explora la casa, toca las pistas numeradas y descubre cómo reducir los riesgos. Luego activa <strong>Ver propuesta</strong> para comparar el antes y el después.</p><div class="welcome-pills"><span>↔ Girar</span><span>＋ Acercar</span><span>① Seleccionar</span></div><button id="beginBtn" class="primary">Comenzar investigación →</button></div>
+  </div>
+  </div>
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/OrbitControls.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
