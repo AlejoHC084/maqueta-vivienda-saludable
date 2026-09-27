@@ -49,6 +49,7 @@
       <p class="intro">Seis personas comparten una vivienda pequeña. El garaje funciona como taller de motos y se comunica con las zonas de vida.</p>
       <div class="family"><span class="family-symbol" aria-hidden="true">●●●<br>●●●</span><div><strong>Padres · abuelos · 2 niños</strong><small>Los más pequeños y los mayores requieren especial cuidado.</small></div></div>
       <div class="mode-tabs" role="group" aria-label="Modo de visualización"><button id="riskMode" class="active">⚠ Inspeccionar</button><button id="solutionMode">✦ Ver propuesta</button></div>
+      <p id="modeHint" class="mode-hint">Toca un número para investigar el riesgo.</p>
       <div class="progress-row"><span>HALLAZGOS IDENTIFICADOS</span><strong id="progressText">0 / 8</strong></div>
       <div class="progress-track"><div id="progressFill"></div></div>
       <div id="list" class="risk-list" aria-label="Lista de hallazgos"></div>
@@ -60,8 +61,8 @@
     <button id="detailClose" class="detail-close" aria-label="Cerrar hallazgo">×</button>
     <div class="detail-label" id="detailLabel"></div>
     <h2 id="detailTitle"></h2><p id="detailWhere" class="detail-where"></p>
-    <div class="detail-block"><span>¿QUÉ OBSERVAMOS?</span><p id="detailRisk"></p></div>
-    <div class="detail-block solution-block"><span>ACCIÓN CONCRETA · ¿POR QUÉ?</span><p id="detailFix"></p></div>
+    <div class="detail-block"><span id="detailRiskLabel">¿QUÉ OBSERVAMOS?</span><p id="detailRisk"></p></div>
+    <div class="detail-block solution-block"><span id="detailFixLabel">ACCIÓN CONCRETA · ¿POR QUÉ?</span><p id="detailFix"></p></div>
     <div class="detail-actions"><button id="markBtn" class="primary"></button><button id="nextBtn" class="outline">Siguiente pista →</button></div>
     <a id="sourceLink" class="source" target="_blank" rel="noopener noreferrer">Consultar fuente ↗</a>
   </div>
